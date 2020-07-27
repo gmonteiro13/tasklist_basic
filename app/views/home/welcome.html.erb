@@ -1,0 +1,13 @@
+<h1>Bem-vindo ao Task List!</h1>
+<h3>Sua lista de tarefas:</h3>
+
+<!-- Isso eh um comentario: note que, no exemplo abaixo, nao queremos imprimir a iteracao (each), somente
+a descricao das tarefas -->
+
+<% @tasks.each do |task| %>
+    <%= task.description %>
+    <%= link_to 'Editar', edit_task_path(task) %>
+    <%= link_to 'Apagar', task_path(task), method: :delete, data: { confirm: 'Quer apagar esta tarefa?' } %>
+<% end %>
+<p>Isto é uma página HTML</p>
+<em>Criada em <%= Date.today %></em>
